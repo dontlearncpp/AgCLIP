@@ -1,23 +1,9 @@
-## [BMVC 2023] CounTX: Open-world Text-specified Object Counting
-*BMVC'2023 Best Poster Award Winner*
+## 
+**
 
-Niki Amini-Naieni, Kiana Amini-Naieni, Tengda Han, & Andrew Zisserman
 
-Official PyTorch implementation for CounTX. Details can be found in the paper.
-[[Paper]](https://arxiv.org/abs/2306.01851v1) [[Project page]](https://www.robots.ox.ac.uk/~vgg/research/countx/)
+Official PyTorch implementation for Ag-CLIP. Details can be found in the paper.
 
-<img src=img/teaser.png width="100%"/>
-<img src=img/architecture.png width="100%"/>
-
-### Contents
-* [Preparation](#preparation)
-* [CounTX Train](#countx-train)
-* [CounTX Inference](#countx-inference)
-* [Pre-trained Weights](#pre-trained-weights)
-* [Using New Dataset](https://github.com/niki-amini-naieni/CounTX/issues/2#issuecomment-1961548998)
-* [Additional Qualitative Examples](#additional-qualitative-examples)
-* [Citation](#citation)
-* [Acknowledgements](#acknowledgements)
 
 ### Preparation
 #### 1. Download Dataset
@@ -27,15 +13,12 @@ Please visit following link to download this dataset.
 
 * [FSC-147](https://github.com/cvlab-stonybrook/LearningToCountEverything)
 
-We also use the text descriptions in FSC-147-D provided in this repository.
+We also use AC-48 provided in this link.
 
-* [FSC-147-D](https://github.com/niki-amini-naieni/CounTX/blob/main/FSC-147-D.json)
+* [AC-48](https://)
 
-Note that the image names in FSC-147 can be used to identify the corresponding text descriptions in FSC-147-D.
 
 #### 2. Set Up Anaconda Environment:
-
-The following commands will create a suitable Anaconda environment for running the CounTX training and inference procedures. To produce the results in the paper, we used [Anaconda version 2022.10](https://repo.anaconda.com/archive/).
 
 ```
 conda create --name countx-environ python=3.7
@@ -50,7 +33,7 @@ pip install .
 ```
 * This repository uses [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+. This fix can be implemented by replacing the file timm/models/layers/helpers.py in the timm codebase with the file [helpers.py](https://github.com/niki-amini-naieni/CounTX/blob/main/helpers.py) provided in this repository.
 
-### CounTX Train
+### Ag-CLIP Train
 
 To train the model, run the following command after activating the Anaconda environment set up in step 2 of [Preparation](#preparation). Make sure to change the directory and file names to the ones you set up in step 1 of [Preparation](#preparation). 
 
