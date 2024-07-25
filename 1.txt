@@ -1,0 +1,117 @@
+#--output_dir "./results"
+ --img_dir "/media/test/run/count/countx/CounTX-main-arg/FSC147_384_V2/images_384_VarV2"
+ --gt_dir "/media/test/run/count/countx/CounTX-main-arg/FSC147_384_V2/gt_density_map_adaptive_384_VarV2"
+ --class_file "/media/test/run/count/countx/CounTX-main-arg/LearningToCountEverything-master/data/ImageClasses_FSC147.txt"
+ --data_split_file "/media/test/run/count/countx/CounTX-main-arg/LearningToCountEverything-master/data/Train_Test_Val_FSC_147.json"
+--FSC147_anno_file "/media/test/run/count/countx/CounTX-main-arg/LearningToCountEverything-master/data/annotation_FSC147_384.json"
+CountingNetwork(
+  (respond): _corr()
+  (batch_norm1): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (fim_blocks): ModuleList(
+    (0-1): 2 x CrossAttentionBlock(
+      (norm0): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (selfattn): Attention(
+        (qkv): Linear(in_features=512, out_features=1536, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=512, out_features=512, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path0): Identity()
+      (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (attn): CrossAttention(
+        (wq): Linear(in_features=512, out_features=512, bias=True)
+        (wk): Linear(in_features=512, out_features=512, bias=True)
+        (wv): Linear(in_features=512, out_features=512, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=512, out_features=512, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path1): Identity()
+      (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (act): GELU(approximate='none')
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path2): Identity()
+    )
+  )
+  (fim_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+  (decode_head0): Sequential(
+    (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 256, eps=1e-05, affine=True)
+    (2): ReLU(inplace=True)
+  )
+  (decode_head1): Sequential(
+    (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 256, eps=1e-05, affine=True)
+    (2): ReLU(inplace=True)
+  )
+  (decode_head2): Sequential(
+    (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 256, eps=1e-05, affine=True)
+    (2): ReLU(inplace=True)
+  )
+  (decode_head3): Sequential(
+    (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): GroupNorm(8, 256, eps=1e-05, affine=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(256, 3, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (clip_model): CLIP(
+    (visual): VisionTransformer(
+      (patchnorm_pre_ln): Identity()
+      (conv1): Conv2d(3, 768, kernel_size=(16, 16), stride=(16, 16), bias=False)
+      (patch_dropout): Identity()
+      (ln_pre): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (transformer): Transformer(
+        (resblocks): ModuleList(
+          (0-11): 12 x ResidualAttentionBlock(
+            (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (attn): MultiheadAttention(
+              (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+            )
+            (ls_1): Identity()
+            (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (mlp): Sequential(
+              (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+              (gelu): GELU(approximate='none')
+              (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+            )
+            (ls_2): Identity()
+          )
+        )
+      )
+      (ln_post): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    )
+    (transformer): Transformer(
+      (resblocks): ModuleList(
+        (0-11): 12 x ResidualAttentionBlock(
+          (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+          )
+          (ls_2): Identity()
+        )
+      )
+    )
+    (token_embedding): Embedding(49408, 512)
+    (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (prompt_learner): PromptLearner(
+    (meta_net): Sequential(
+      (linear1): Linear(in_features=512, out_features=32, bias=True)
+      (relu): ReLU(inplace=True)
+      (linear2): Linear(in_features=32, out_features=512, bias=True)
+    )
+  )
+)
