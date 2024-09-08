@@ -2,7 +2,7 @@
 **
 
 
-Official PyTorch implementation for Ag-CLIP. Details can be found in the paper.
+Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 
 
 ### Preparation
@@ -15,7 +15,7 @@ Please visit following link to download this dataset.
 
 We also use AC-48 provided in this link.
 
-* [AC-48](https://)
+* [AC-46](https://)
 
 
 #### 2. Set Up Anaconda Environment:
@@ -33,7 +33,7 @@ pip install .
 ```
 * This repository uses [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+. This fix can be implemented by replacing the file timm/models/layers/helpers.py in the timm codebase with the file [helpers.py](https://github.com/niki-amini-naieni/CounTX/blob/main/helpers.py) provided in this repository.
 
-### Ag-CLIP Train
+### AgCLIP Train
 
 To train the model, run the following command after activating the Anaconda environment set up in step 2 of [Preparation](#preparation). Make sure to change the directory and file names to the ones you set up in step 1 of [Preparation](#preparation). 
 
@@ -79,14 +79,7 @@ Additional qualitative examples for CounTX not included in the main paper are pr
 
 ### Citation
 
-```
-@InProceedings{AminiNaieni23,
-  author = "Amini-Naieni, N. and Amini-Naieni, K. and Han, T. and Zisserman, A.",
-  title = "Open-world Text-specified Object Counting",
-  booktitle = "British Machine Vision Conference",
-  year = "2023",
-}
-```
+
 
 ### Acknowledgements
 
