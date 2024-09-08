@@ -13,7 +13,7 @@ Please visit following link to download this dataset.
 
 * [FSC-147](https://github.com/cvlab-stonybrook/LearningToCountEverything)
 
-We also use AC-48 provided in this link.
+We also use AC-46 provided in this link.
 
 * [AC-46](https://)
 
