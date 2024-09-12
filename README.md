@@ -57,12 +57,11 @@ For the test set:
 ```
 
 ### Pre-Trained Weights
-The model weights used in the paper can be downloaded from [Google Drive link (1.3 GB)](). To reproduce the results in the paper, run the following commands after activating the Anaconda environment set up in step 2 of [Preparation](#preparation). Make sure to change the directory and file names to the ones you set up in step 1 of [Preparation](#preparation). Make sure that the model file name refers to the model that you downloaded.
 
 For the validation set:
 
 ```
-python test_reproduce_paper.py --data_split "val" --output_dir "./test" --resume "paper-model.pth" --img_dir "/scratch/local/hdd/nikian/images_384_VarV2" --FSC147_anno_file "/scratch/local/hdd/nikian/annotation_FSC147_384.json" --FSC147_D_anno_file "./FSC-147-D.json" --data_split_file "/scratch/local/hdd/nikian/Train_Test_Val_FSC_147.json"
+
 ```
 
 For the test set:
