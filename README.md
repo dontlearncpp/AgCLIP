@@ -1,6 +1,6 @@
 ## 
 **
-The code,weights and data sets are all provide.
+The code,weights and dataset sets are all provide.
 
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 
@@ -15,7 +15,7 @@ Please visit following link to download this dataset.
 
 We also use AC-46 provided in this link.
 
-* [AC-46](https://)
+* [AC-46](https://drive.google.com/file/d/1yp3yoD_GRCMTF1lQFjNARkvnMjazY4kH/view?usp=drive_link)
 
 
 #### 2. Set Up Anaconda Environment:
@@ -49,9 +49,9 @@ To train the model, run the following command after activating the Anaconda envi
 --FSC147_anno_file
 "/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/annotation_FSC147_384.json"
 --FSC147_D_anno_file
-"/home/test/countx/CounTX-main-arg-up/Arg.json"
+"/home/test/countx/CounTX-main-arg-up/Arg46.json"
 --data_split_file
-"/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/Train_Test_Val_Arg.json"
+"/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/Train_Test_Val_Arg46.json"
 ```
 
 ### AgCLIP Inference
