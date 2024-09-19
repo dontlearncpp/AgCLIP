@@ -1,6 +1,6 @@
 ## 
 **
-The code has been published and the weights and data sets will be published after collation
+The code,weights and data sets are all provide.
 
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 
@@ -38,7 +38,20 @@ pip install .
 To train the model, run the following command after activating the Anaconda environment set up in step 2 of [Preparation](#preparation). Make sure to change the directory and file names to the ones you set up in step 1 of [Preparation](#preparation). 
 
 ```
-
+--output_dir
+"./results"
+--img_dir
+"/home/test/countx/CounTX-main-arg-up/FSC147_384_V2/images_384_VarV2"
+--gt_dir
+"/home/test/countx/CounTX-main-arg-up/FSC147_384_V2/gt_density_map_adaptive_384_VarV2"
+--class_file
+"/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/ImageClasses_Arg.txt"
+--FSC147_anno_file
+"/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/annotation_FSC147_384.json"
+--FSC147_D_anno_file
+"/home/test/countx/CounTX-main-arg-up/Arg.json"
+--data_split_file
+"/home/test/countx/CounTX-main-arg-up/LearningToCountEverything-master/data/Train_Test_Val_Arg.json"
 ```
 
 ### CounTX Inference
