@@ -98,7 +98,7 @@ For the test set:
 
 ### Pre-Trained Weights
 The weight of replicating the accuracy of the paper：
-* [The weight of paper](https://github.com/cvlab-stonybrook/LearningToCountEverything)
+* [The weight of paper](https://drive.google.com/file/d/1bLYgfxeOvpHow99W3EvlzBVn80LkVuR5/view?usp=drive_link)
 
 
 
