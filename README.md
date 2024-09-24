@@ -1,6 +1,6 @@
 ## 
 **
-The code,weights and dataset sets are all provide.
+The code,weights and datasets are all provide.
 
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 
@@ -14,6 +14,7 @@ Please visit following link to download this dataset.
 * [FSC-147](https://github.com/cvlab-stonybrook/LearningToCountEverything)
 
 We also use AC-46 provided in this link.
+AC-46 was collected from large public datasets COCO, FSC-147, and 22 types open-source agriculture target detection datasets.
 
 * [AC-46](https://drive.google.com/file/d/1yp3yoD_GRCMTF1lQFjNARkvnMjazY4kH/view?usp=drive_link)
 
