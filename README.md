@@ -33,6 +33,33 @@ pip install .
 ```
 * This repository uses [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+. This fix can be implemented by replacing the file timm/models/layers/helpers.py in the timm codebase with the file [helpers.py](https://github.com/niki-amini-naieni/CounTX/blob/main/helpers.py) provided in this repository.
 
+##### Open set prompt learning (OPL):
+
+The related code (/home/test/.conda/envs/Agclip/lib/python3.8/site-packages/open_clip/model.py) Line 216 in OpenCLIP was modeified:
+```
+    def encode_text(self, text,prompts, normalize: bool = False):
+        cast_dtype = self.transformer.get_cast_dtype()
+
+        x = self.token_embedding(text).to(cast_dtype)  # [batch_size, n_ctx, d_model]
+
+        x = x + self.positional_embedding.to(cast_dtype)+prompts
+
+        # x = self.positional_embedding.to(cast_dtype)+prompts
+
+        
+        x = x.permute(1, 0, 2)  # NLD -> LND
+        x = self.transformer(x, attn_mask=self.attn_mask)
+        x = x.permute(1, 0, 2)  # LND -> NLD
+        x = self.ln_final(x)  # [batch_size, n_ctx, transformer.width]
+        # take features from the eot embedding (eot_token is the highest number in each sequence)
+        # x=x+prompts
+        x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
+        return F.normalize(x, dim=-1) if normalize else x
+```
+
+
+OPL was refered to the ['cocoop'](https://github.com/KaiyangZhou/CoOp), and [OpenCLIP repository](https://github.com/mlfoundations/open_clip). 
+
 ### AgCLIP Train
 
 To train the model, run the following command after activating the Anaconda environment set up in step 2 of [Preparation](#preparation). Make sure to change the directory and file names to the ones you set up in step 1 of [Preparation](#preparation). 
