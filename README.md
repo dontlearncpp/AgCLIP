@@ -3,7 +3,7 @@
 The code,weights and datasets are all provide.
 
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
-
+**
 
 ### Preparation
 #### 1. Download Dataset
