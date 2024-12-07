@@ -5,8 +5,9 @@ The code,weights and datasets are all provide.
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 **
 The frame of AgCLIP is
-![image](https://github.com/user-attachments/assets/72c8015e-0ac0-481b-9d0b-e87703c17ffe)
-The details can be find in paper!
+![image](https://github.com/user-attachments/assets/beacc0cf-09ed-4009-8942-fff5d25d7777)
+
+
 
 
 ### Preparation
@@ -21,6 +22,7 @@ We also use AC-46 provided in this link.
 AC-46 was collected from large public datasets COCO, FSC-147, and 22 types open-source agriculture target detection datasets.
 
 * [AC-46](https://drive.google.com/file/d/1yp3yoD_GRCMTF1lQFjNARkvnMjazY4kH/view?usp=drive_link)
+![image](https://github.com/user-attachments/assets/f9e3b6f2-638f-4243-97bf-6b57d841c9cb)
 
 
 #### 2. Set Up Anaconda Environment:
