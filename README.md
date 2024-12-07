@@ -6,7 +6,7 @@ Official PyTorch implementation for AgCLIP. Details can be found in the paper.
 
 
 The frame of AgCLIP is
-![image](https://github.com/user-attachments/assets/beacc0cf-09ed-4009-8942-fff5d25d7777)
+![image](https://github.com/user-attachments/assets/1425efb2-b2b1-4afb-8224-16ed4574352a)
 
 
 
