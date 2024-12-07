@@ -1,9 +1,10 @@
-## 
-**
-The code,weights and datasets are all provide.
+
+
+## The code,weights and datasets are all provide.
 
 Official PyTorch implementation for AgCLIP. Details can be found in the paper.
-**
+
+
 The frame of AgCLIP is
 ![image](https://github.com/user-attachments/assets/beacc0cf-09ed-4009-8942-fff5d25d7777)
 
